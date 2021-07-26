@@ -1,0 +1,58 @@
+<aura:component implements="flexiPage:availableForAllPageTypes,force:AppHostable">
+
+    <aura:attribute name='Details' type='String'/>
+
+    <aura:attribute name='abscore1' type='Integer'/>
+    <aura:attribute name='abscore2' type='Integer'/>
+    <aura:attribute name='abscore3' type='Integer'/>
+    <aura:attribute name='abscore4' type='Integer'/>
+    <aura:attribute name='abscore5' type='Integer'/>
+    <aura:attribute name='abscore6' type='Integer'/>
+    <aura:attribute name='abscore7' type='Integer'/>
+    <aura:attribute name='abscore8' type='Integer'/>
+    <aura:attribute name='abscore9' type='Integer'/>
+    <aura:attribute name='abscore10' type='Integer'/>
+    
+    <aura:attribute name='abscore11' type='Integer'/>
+
+    <div align="center"><img width="200" height="100" src="{!$Resource.dnd}"/></div>
+    <div style="width: 70%; margin-left: auto; margin-right: auto">
+    
+    <lightning:card>
+    <lightning:recordEditForm density="comfy" objectApiName="Character__c">
+       <lightning:inputField fieldName="Name" />
+        <div class="slds-grid">
+        	<div class="slds-col slds-size_1-of-2">
+                <lightning:inputField fieldName="Race__c" />
+                <lightning:inputField fieldName="Class__c" />
+                <lightning:inputField fieldName="Level__c" value = "{!v.abscore1}" />
+                <lightning:inputField fieldName="Strength__c" value = "{!v.abscore2}" />
+                <lightning:inputField fieldName="Dexterity__c" value = "{!v.abscore3}"/>
+                <lightning:inputField fieldName="Constitution__c" value = "{!v.abscore4}"/>
+                <lightning:inputField fieldName="Intelligence__c" value = "{!v.abscore5}"/>
+                <lightning:inputField fieldName="Wisdom__c" value = "{!v.abscore5}"/>
+                <lightning:inputField fieldName="Charisma__c" value = "{!v.abscore6}"/>
+            </div>
+            <div class="slds-col slds-size_1-of-2">
+                <lightning:inputField fieldName="Current_HP__c" value = "{!v.abscore11}"/>
+                <lightning:inputField fieldName="Max_Hp__c" value = "{!v.abscore7}"/>
+                <lightning:inputField fieldName="Alignment__c" />
+                <lightning:inputField fieldName="Deity__c" />
+                <lightning:inputField fieldName="Height__c" value = "{!v.abscore8}"/>
+                <lightning:inputField fieldName="Weight__c" value = "{!v.abscore9}"/>
+                <lightning:inputField fieldName="Size__c" />
+                <lightning:inputField fieldName="Hair_Color__c" />
+                <lightning:inputField fieldName="Description__c" value = "{!v.Details}"/>
+            </div>
+        </div>
+        
+        <div align="center">
+            <lightning:button type="submit" label="Save Record"/>
+            <lightning:button type="reset" label="Cancel" />
+            <lightning:button name="Randomize" label="Randomize" onclick="{!c.Randomize}"/>
+        </div>
+        
+      </lightning:recordEditForm>
+    </lightning:card>
+    </div>
+</aura:component>

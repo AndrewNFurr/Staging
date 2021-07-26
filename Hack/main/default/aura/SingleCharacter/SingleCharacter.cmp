@@ -1,0 +1,56 @@
+<aura:component controller="CharacterController">
+    <aura:attribute name="char" type="Character__c"/>
+    <aura:attribute name="des" type="Boolean" default='false'/>
+    <aura:attribute name="out" type="Boolean" default='false'/>
+    <aura:registerEvent name="ctto" type="c:ctto"/>
+    <aura:registerEvent name="SendCharIdEvent" type="c:SendCharIdEvent"/>
+    
+    <lightning:recordViewForm recordId="{!v.char.Id}" objectApiName="Character__c" class="slds-p-bottom_small">
+        <div class="slds-box slds-grid ">
+            <table class="slds-table slds-table--bordered slds-table--striped">
+                 <thead>
+                     <tr>
+                     <th scope="col"><span class="slds-truncate">Name</span></th>
+                     <th scope="col"><span class="slds-truncate">Level</span></th>
+                     <th scope="col"><span class="slds-truncate">Class</span></th>
+                         <!--
+                     <th scope="col"><span class="slds-truncate">Dexterity</span></th>
+                     <th scope="col"><span class="slds-truncate">Wisdom</span></th>
+                     <th scope="col"><span class="slds-truncate">Intelligence</span></th>
+                     <th scope="col"><span class="slds-truncate">Constitution</span></th>
+                     <th scope="col"><span class="slds-truncate">Charisma</span></th>
+                     <th scope="col"><span class="slds-truncate">Strength</span></th> -->
+                     </tr>
+                 </thead>
+                 <tbody>
+                     <tr>
+                     <td> {!v.char.Name}</td> 
+                     <td> {!v.char.Level__c}</td>
+                     <td> {!v.char.Class__c}</td>
+                         <!--
+                     <td> {!v.char.Dexterity__c}</td>
+                     <td> {!v.char.Wisdom__c}</td>
+                     <td> {!v.char.Intelligence__c}</td>
+                     <td> {!v.char.Constitution__c}</td>
+                     <td> {!v.char.Charisma__c}</td>
+                     <td> {!v.char.Strength__c}</td> -->
+					<td><lightning:button variant="brand"
+                                           label="See Description"
+                                           onclick="{!c.seeDescription}"/></td>
+                     </tr>
+                 </tbody>
+ 			</table>
+        </div>
+    </lightning:recordViewForm>
+    <lightning:card>
+            	<aura:if isTrue="{!v.des}">
+                     	<lightning:recordEditForm recordId="{!v.char.Id}" objectApiName="Character__c">
+                            <lightning:inputField fieldName="Description__c" />
+                            <lightning:button class="slds-m-top_small" variant="brand" type="submit" name="update" label="Update" />
+    					</lightning:recordEditForm>
+                        <lightning:button variant="brand"
+                                         label="Randomize"
+                                         onclick="{!c.Randomize}"/>
+                      </aura:if>
+            </lightning:card>
+</aura:component>

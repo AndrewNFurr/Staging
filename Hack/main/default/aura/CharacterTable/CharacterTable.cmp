@@ -1,0 +1,20 @@
+<aura:component controller="CharacterController">
+    <aura:attribute name="charList" type="Character__c[]"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    
+    <lightning:card>
+        <div class="slds-align_absolute-center slds-grid slds-grid_vertical">
+            <header class="slds-card__header slds-col">
+                <h1>Characters</h1>
+            </header>
+            <section class="slds-col">
+                <div id="list" class="slds-grid slds-grid_vertical">
+                    <aura:iteration items="{!v.charList}" var="char">
+                        <c:SingleCharacter char="{!char}"/>
+                    </aura:iteration>
+                </div>
+            </section>
+        </div>
+    </lightning:card>
+        
+</aura:component>

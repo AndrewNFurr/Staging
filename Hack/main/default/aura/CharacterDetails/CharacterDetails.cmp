@@ -1,0 +1,45 @@
+<aura:component controller='CharacterDetailsApexController'>
+    <aura:attribute name='Details' type='Character__c'/>
+    <aura:attribute name='CharId' type='String'/>
+    <aura:attribute name='Descrip' type='String'/>
+    
+    
+
+    <aura:handler name="init" value="{!this}" action="{!c.fetchCharDetails}"/>
+
+    <aura:handler  event="c:SendCharIdEvent" action="{!c.setValue}"/>
+    <aura:registerEvent name="SendCharIdEvent" type="c:SendCharIdEvent"/>
+    <aura:registerEvent name="ctto" type="c:ctto"/>
+    
+    <div class="slds-p-around_small">
+        <lightning:recordEditForm objectApiName="Character__c" recordId= "{!v.CharId}"
+                                      onsubmit="{!c.handleSubmit}">
+        <div class="slds-grid">
+        	<div class="slds-col slds-size_1-of-2">                      
+                <lightning:messages />
+            	<lightning:outputField fieldName="Name" />
+                <lightning:inputField fieldName="Strength__c" />
+                <lightning:inputField fieldName="Dexterity__c" />
+                <lightning:inputField fieldName="Constitution__c" />
+                <lightning:inputField fieldName="Wisdom__c" />
+                <lightning:inputField fieldName="Intelligence__c" />
+                <lightning:inputField fieldName="Charisma__c" />
+            </div>
+            <div class="slds-col slds-size_1-of-2">
+                <lightning:inputField fieldName="Current_HP__c" />
+                <lightning:inputField fieldName="Max_Hp__c" />
+                <lightning:inputField fieldName="Alignment__c" />
+                <lightning:inputField fieldName="Deity__c" />
+                <lightning:inputField fieldName="Height__c" />
+                <lightning:inputField fieldName="Weight__c" />
+                <lightning:inputField fieldName="Size__c" />
+                <lightning:inputField fieldName="Hair_Color__c" />
+                <lightning:inputField fieldName="Description__c" value = "{!v.Descrip}" />
+            </div>
+            </div>
+            	<lightning:button type="submit" name="Update" label="Update" class="slds-m-top_small"/>
+            	<lightning:button name="Randomize" label="Randomize" onclick="{!c.Randomize}" class="slds-m-top_small"/>
+                <lightning:button  class="slds-m-top_small" name ="Return" label ="Return" onclick="{!c.fireReturn}"/>
+            </lightning:recordEditForm>
+        </div>
+</aura:component>

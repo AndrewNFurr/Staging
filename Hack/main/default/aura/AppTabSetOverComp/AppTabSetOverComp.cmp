@@ -1,0 +1,33 @@
+<aura:component implements="flexipage:availableForAllPageTypes,lightning:isUrlAddressable" access="global">
+
+    <aura:attribute name="viewChangeFlag" type = "Boolean" default = "true"/>
+    <aura:handler name="ctto" event="c:ctto" action="{!c.Setflag}"/>
+    
+
+        <lightning:tabset variant="scoped">
+        <lightning:tab label="View a Character">
+            
+            <aura:if isTrue="{!v.viewChangeFlag}">
+                <!--insert list here-->
+                <c:CharacterTable/>
+         
+            </aura:if>
+            
+            <aura:if isTrue="{!!v.viewChangeFlag}">
+                <c:CharacterDetails/>
+
+            </aura:if>
+
+
+
+        </lightning:tab>
+        
+        <lightning:tab label="Create a Character">
+            
+            <!--insert components for the creation here-->
+            <c:CharacterFormComponent/>
+
+        </lightning:tab>
+    </lightning:tabset>
+
+</aura:component>

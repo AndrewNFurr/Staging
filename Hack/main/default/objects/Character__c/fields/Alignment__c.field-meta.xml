@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Alignment__c</fullName>
+    <externalId>false</externalId>
+    <label>Alignment</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>LawfulEvil</fullName>
+                <default>false</default>
+                <label>Lawful Evil</label>
+            </value>
+            <value>
+                <fullName>LawfulGood</fullName>
+                <default>false</default>
+                <label>Lawful Good</label>
+            </value>
+            <value>
+                <fullName>LawfulNeutral</fullName>
+                <default>false</default>
+                <label>Lawful Neutral</label>
+            </value>
+            <value>
+                <fullName>Neutral</fullName>
+                <default>false</default>
+                <label>True Neutral</label>
+            </value>
+            <value>
+                <fullName>NeutralGood</fullName>
+                <default>false</default>
+                <label>Neutral Good</label>
+            </value>
+            <value>
+                <fullName>NeutralEvil</fullName>
+                <default>false</default>
+                <label>Neutral Evil</label>
+            </value>
+            <value>
+                <fullName>ChaoticGood</fullName>
+                <default>false</default>
+                <label>Chaotic Good</label>
+            </value>
+            <value>
+                <fullName>ChaoticEvil</fullName>
+                <default>false</default>
+                <label>Chaotic Evil</label>
+            </value>
+            <value>
+                <fullName>ChaoticNeutral</fullName>
+                <default>false</default>
+                <label>Chaotic Neutral</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>
