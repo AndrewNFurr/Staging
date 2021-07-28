@@ -1,0 +1,29 @@
+<template>
+    
+    <lightning-card title="Characters">
+        <template if:true={characters.data}>
+            <lightning-input type="search"
+                     label="Search"
+                     value={searchTerm}
+                     onchange={handleSearchTermChange}
+                     is-loading>
+            </lightning-input>
+            <template for:each={characters.data} for:item="char">
+                <lightning-layout-item key={char.Id} size='5' class="slds-var-p-around_small">
+                    <c-single-character-lwc character={char}></c-single-character-lwc>
+                </lightning-layout-item>
+            </template>
+        </template>
+        <!--<template if:false={hasResults}>
+            <div class="slds-align_absolute-center slds-var-m-vertical_small">
+                No Characters of that name
+            </div>
+        </template>-->
+        <template if:true={characters.error}>
+            <div class="slds-text-color_error">
+                <p>{character.error}</p>
+                An error occurred while loading the character list
+            </div>
+        </template>
+    </lightning-card>
+</template>

@@ -1,0 +1,58 @@
+<template>
+    <lightning-card title={character.Name} class='char-tile'>
+        <div class="slds-grid slds-grid_vertical">
+            <div class="slds-col_1-of-3 slds-var-p-bottom_medium">
+                <template if:true={description}>
+                    <lightning-card title="Description">
+                        <p class="slds-var-m-bottom_medium">{character.Description__c}</p>
+                    </lightning-card>
+                    <lightning-button
+                        label="Randomize"
+                        variant="brand"
+                        onclick={randomize}
+                        class='slds-var-p-right_medium'    
+                    ></lightning-button>
+                </template>
+                <lightning-button-icon
+                                icon-name="utility:identity"
+                                icon-class="desc-button"
+                                variant="bare"
+                                alternative-text="Description"
+                                onclick={handleDescription}>
+                            </lightning-button-icon>
+            </div>
+            <div class="slds-var-p-horizontal_small bear-tile-body slds-col_2-of-3">
+                <div class="slds-media">
+                    <div class="slds-media__figure">
+                    </div>
+                    <div class="slds-media__body slds-grid slds-grid_horizontal">
+                        <div class="slds-col slds-sixe_1-of-3">
+                            <h3>Stats</h3>
+                            <p class="slds-var-m-bottom_small">Strength: {character.Strength__c}</p>
+                            <p class="slds-var-m-bottom_small">Dexterity: {character.Dexterity__c}</p>
+                            <p class="slds-var-m-bottom_small">Wisdom: {character.Wisdom__c}</p>
+                            <p class="slds-var-m-bottom_small">Intelligence: {character.Intelligence__c}</p>
+                            <p class="slds-var-m-bottom_small">Constitution: {character.Constitution__c}</p>
+                            <p class="slds-var-m-bottom_small">Charisma: {character.Charisma__c}</p>
+                        </div>
+                        <div class="slds-col slds-sixe_1-of-3">
+                            <h3>Build</h3>
+                            <p class="slds-var-m-bottom_small">Current HP: {character.Current_HP__c} pts</p>
+                            <p class="slds-var-m-bottom_small">Max HP: {character.Max_Hp__c} pts</p>
+                            <p class="slds-var-m-bottom_small">Height: {character.Height__c} cm</p>
+                            <p class="slds-var-m-bottom_small">Weight: {character.Weight__c} kg</p>
+                        </div>
+                        <div class="slds-col slds-sixe_1-of-3">
+                            <h3>Characteristics</h3>
+                            <p class="slds-var-m-bottom_small">Race: {character.Race__c}</p>
+                            <p class="slds-var-m-bottom_small">Level: {character.Level__c}</p>
+                            <p class="slds-var-m-bottom_small">Class: {character.Class__c}</p>
+                            <p class="slds-var-m-bottom_small">Alignment: {character.Alignment__c}</p>
+                            <p class="slds-var-m-bottom_small">Deity: {character.Deity__c}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </lightning-card>
+</template>
