@@ -1,0 +1,22 @@
+.win {
+    color: green
+}
+.lose {
+    color: red;
+}
+.stats {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+.char {
+    border: 1px solid rebeccapurple;
+    border-radius: 5px;
+    padding: 1rem;
+}
+.monster {
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 1rem;
+}

@@ -3,7 +3,7 @@ public class CharacterController {
     public static List<Character__c> getChars() {
         List<Character__c> chars =  [
             SELECT Name, Description__c, Charisma__c, Constitution__c, Dexterity__c, 
-                   Strength__c, Intelligence__c, Wisdom__c, 
+                   Strength__c, Intelligence__c, Wisdom__c, Damage__c,
                    Current_HP__c, Max_Hp__c, Height__c, Weight__c,
                    Race__c, Level__c, Size__c, Class__c, Alignment__c, Deity__c
             FROM Character__c
@@ -21,7 +21,7 @@ public class CharacterController {
         searchTerm = '%' + searchTerm + '%';
         List<Character__c> chars =  [
             SELECT Name, Description__c, Charisma__c, Constitution__c, Dexterity__c, 
-                   Strength__c, Intelligence__c, Wisdom__c, 
+                   Strength__c, Intelligence__c, Wisdom__c, Damage__c,
                    Current_HP__c, Max_Hp__c, Height__c, Weight__c,
                    Race__c, Level__c, Size__c, Class__c, Alignment__c, Deity__c
             FROM Character__c
@@ -36,5 +36,24 @@ public class CharacterController {
         ch.Description__c = random;
         update ch;
         return ch;
+    }
+    @AuraEnabled 
+    public static Character__c getExp(Id charId) {
+        Character__c ch = [SELECT Exp__c FROM Character__c WHERE id=:charId];
+        ch.Exp__c += 10;
+        update ch;
+        return ch;
+    }
+
+    @AuraEnabled
+    public static Monster__c getMonster(Integer monNum){
+        system.debug(monNum);
+        Monster__c appeared = [
+            SELECT Name, Damage__c, Defense__c, Health__c, Number__c, Description__c
+            FROM Monster__c
+            WHERE Number__c =: monNum
+            LIMIT 1
+          ];
+          return appeared;
     }
 }
