@@ -1,9 +1,23 @@
-import { LightningElement, api } from 'lwc';
+import { LightningElement, api, wire } from 'lwc';
+import { publish, MessageContext } from 'lightning/messageService';
+import Battle_Selection_Channel from '@salesforce/messageChannel/Battle_Selection__c'
 import updateChar from '@salesforce/apex/CharacterController.updateChar';
 export default class SingleCharacterLwc extends LightningElement {
     @api character;
+    
     error;
     description = false;
+
+    @wire(MessageContext)
+    messageContext;
+    selectForBattle() {
+        const payload = {
+            battlee: this.character
+        };
+        console.log(payload);
+        publish(this.messageContext, Battle_Selection_Channel, payload);
+    }
+    
     handleDescription() {
         if (this.description == false) {
             this.description = true;
@@ -11,6 +25,7 @@ export default class SingleCharacterLwc extends LightningElement {
             this.description = false;
         }
     }
+    
     randomize() {
         const arr1 = ['Warrior', 'Wizard', 'Rogue', 'Paladin', 'Druid'];
         const arr2 = ['Staff', 'Sword', 'Hammer', 'Fork', 'Ax'];

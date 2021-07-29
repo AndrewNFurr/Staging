@@ -1,0 +1,18 @@
+.description {
+    border: 1.5px solid rgb(0, 9, 128);
+    background-color: rgb(186, 238, 240);
+    border-radius: 5px;
+    display: block;
+}
+.char-tile {
+    border: 1.5px solid rgb(68, 128, 0);
+    background-color: rgb(194, 219, 152);
+    border-radius: 5px;
+    display: block;
+}
+.chosen {
+    border: 1.5px solid goldenrod;
+    background-color: rgb(234, 235, 171);
+    border-radius: 5px;
+    display: block;
+}

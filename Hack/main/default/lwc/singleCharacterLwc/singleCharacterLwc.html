@@ -1,5 +1,5 @@
 <template>
-    <lightning-card title={character.Name} class='char-tile'>
+    <lightning-card title={character.Name} class="char-tile" onclick={selectForBattle}>
         <div class="slds-grid slds-grid_vertical">
             <div class="slds-col_1-of-3 slds-var-p-bottom_medium">
                 <template if:true={description}>
@@ -27,7 +27,7 @@
                     </div>
                     <div class="slds-media__body slds-grid slds-grid_horizontal">
                         <div class="slds-col slds-sixe_1-of-3">
-                            <h3>Stats</h3>
+                            <h3 class="h3">Stats</h3>
                             <p class="slds-var-m-bottom_small">Strength: {character.Strength__c}</p>
                             <p class="slds-var-m-bottom_small">Dexterity: {character.Dexterity__c}</p>
                             <p class="slds-var-m-bottom_small">Wisdom: {character.Wisdom__c}</p>
