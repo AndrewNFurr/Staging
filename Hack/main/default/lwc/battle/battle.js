@@ -89,7 +89,7 @@ export default class Battle extends LightningElement {
         this.lose = false;
         updateCharHealth({charId : this.character.Id})
             .then(result => {
-                this.character = result;
+                //this.character = result;
                 this.charHealth = this.character.Max_Hp__c;
             })
             .catch(error => {
@@ -97,6 +97,6 @@ export default class Battle extends LightningElement {
             });
         this.monHealth = null;
         this.monster = null;
-        this.character = null;
+        //this.character = null;
     }
 }
