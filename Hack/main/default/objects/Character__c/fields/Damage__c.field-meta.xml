@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Damage__c</fullName>
+    <description>Damage</description>
+    <externalId>false</externalId>
+    <formula>CASE(Weapon__c,
+  &quot;Sword&quot;,  (Dexterity__c*0.5 + Strength__c*1.5) * Level__c/2,
+  &quot;Polearm&quot;, (Dexterity__c*1.5 + Strength__c*0.5) * Level__c/2,
+  &quot;Dagger&quot;, Dexterity__c*2.5*(Level__c/2),
+  &quot;Staff&quot;, (Intelligence__c + Wisdom__c*0.5) * Level__c/2,
+  &quot;Ax&quot;, Strength__c*2.5*(Level__c/2),
+  &quot;Deez Mits&quot;, Strength__c*Level__c/2,
+6)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Damage</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

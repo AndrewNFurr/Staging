@@ -4,7 +4,7 @@
             <div class="slds-col_1-of-3 slds-var-p-bottom_medium">
                 <template if:true={description}>
                     <lightning-card title="Description">
-                        <p class="slds-var-m-bottom_medium">{character.Description__c}</p>
+                        <p id="desc" class="slds-var-m-bottom_medium">{character.Description__c}</p>
                     </lightning-card>
                     <lightning-button
                         label="Randomize"

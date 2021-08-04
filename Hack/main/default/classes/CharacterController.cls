@@ -69,13 +69,13 @@ public class CharacterController {
         update ch;
         return ch;
     }
-    @AuraEnabled
+   /* @AuraEnabled
     public static Monster__c updateMonHealth(Id monId) {
         Monster__c mon = [SELECT Health__c, Current_HP__c FROM Monster__c WHERE Id =: monId];
         mon.Current_HP__c = mon.Health__c;
         update mon;
         return mon;
-    }
+    }*/
     @AuraEnabled
     public static Character__c takeCharTurn(Id charId, Integer monDam) {
         Character__c ch = [SELECT Current_HP__c FROM Character__c WHERE Id =:charId];

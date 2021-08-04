@@ -4,9 +4,6 @@ import Battle_Selection_Channel from '@salesforce/messageChannel/Battle_Selectio
 import getMonster from '@salesforce/apex/CharacterController.getMonster';
 import getExp from '@salesforce/apex/CharacterController.getExp';
 import updateCharHealth from '@salesforce/apex/CharacterController.updateCharHealth';
-import updateMonHealth from '@salesforce/apex/CharacterController.updateMonHealth';
-import takeCharTurn from '@salesforce/apex/CharacterController.takeCharTurn';
-import takeMonTurn from '@salesforce/apex/CharacterController.takeMonTurn';
 export default class Battle extends LightningElement {
     character = null;
     monster = null;
@@ -43,6 +40,7 @@ export default class Battle extends LightningElement {
             .catch(error => {
                 this.error = error;
             });
+        return true;
     }
     startFlee() {
         this.monster = null;

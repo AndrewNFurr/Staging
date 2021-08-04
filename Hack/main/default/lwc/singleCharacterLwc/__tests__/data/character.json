@@ -1,0 +1,25 @@
+[
+     {
+            "Id": "0023400000iHHYASS1",
+            "Name": "Bro",
+            "Strength__c": "10",
+            "Dexterity__c": "10",
+            "Wisdom__c": "10",
+            "Constitution__c": "10",
+            "Charisma__c": "10",
+            "Intelligence__c": "10",
+            "Height__c": "10",
+            "Weight__c": "10",
+            "Alignment__c": "Neutral",
+            "Race__c": "Human",
+            "Max_HP__c": "10",
+            "Current_Hp__c": "10",
+            "Level__c": "1",
+            "Class__c": "Fighter",
+            "Deity__c": "None",
+            "Description__c" : "This is the Description"
+     }
+     
+
+    
+]
