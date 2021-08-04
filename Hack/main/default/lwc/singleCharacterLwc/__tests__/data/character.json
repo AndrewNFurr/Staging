@@ -1,25 +1,26 @@
-[
-     {
-            "Id": "0023400000iHHYASS1",
-            "Name": "Bro",
-            "Strength__c": "10",
-            "Dexterity__c": "10",
-            "Wisdom__c": "10",
-            "Constitution__c": "10",
-            "Charisma__c": "10",
-            "Intelligence__c": "10",
-            "Height__c": "10",
-            "Weight__c": "10",
-            "Alignment__c": "Neutral",
-            "Race__c": "Human",
-            "Max_HP__c": "10",
-            "Current_Hp__c": "10",
-            "Level__c": "1",
-            "Class__c": "Fighter",
-            "Deity__c": "None",
-            "Description__c" : "This is the Description"
+[{
+          "Dexterity__c": 12,
+          "Strength__c": 14,
+          "Constitution__c": 10,
+          "Alignment__c": "Neutral",
+          "Intelligence__c": 10,
+          "Current_HP__c": 152,
+          "Height__c": 6,
+          "Class__c": "Fighter",
+          "Name": "Andy",
+          "Charisma__c": 10,
+          "Weight__c": 150,
+          "Damage__c": 162.5,
+          "Level__c": 13,
+          "Description__c": "A mighty Rogue who comes from the Forest. One who Loves all the enemies using a Hammer. Very Charismatic.",
+          "Race__c": "Human",
+          "Max_Hp__c": 152,
+          "Size__c": "Medium",
+          "Deity__c": "a what?",
+          "Id": "a00P0000006nN8nIAE",
+          "Wisdom__c": 10
      }
-     
 
-    
+
+
 ]

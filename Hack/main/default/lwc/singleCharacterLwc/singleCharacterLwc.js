@@ -14,16 +14,11 @@ export default class SingleCharacterLwc extends LightningElement {
         const payload = {
             battlee: this.character
         };
-        console.log(payload);
         publish(this.messageContext, Battle_Selection_Channel, payload);
     }
     
     handleDescription() {
-        if (this.description == false) {
-            this.description = true;
-        } else {
-            this.description = false;
-        }
+        this.description = !this.description;
     }
     
     randomize() {

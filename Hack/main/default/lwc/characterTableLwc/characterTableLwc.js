@@ -2,11 +2,8 @@ import { LightningElement, wire } from 'lwc';
 import searchChars from '@salesforce/apex/CharacterController.searchChars';
 export default class CharacterTableLwc extends LightningElement {
     searchTerm = '';
-    characters;
     @wire(searchChars, {searchTerm: '$searchTerm'})
-    loadChars(result) {
-        this.characters = result;
-    }
+    characters;
     
     handleSearchTermChange(event) {
         window.clearTimeout(this.delayTimeout);
@@ -16,9 +13,6 @@ export default class CharacterTableLwc extends LightningElement {
 			this.searchTerm = searchTerm;
 		}, 300);
     }
-    /*get hasResults() {
-        return(this.characters.data.length > 0);
-    };*/
     
     
 }

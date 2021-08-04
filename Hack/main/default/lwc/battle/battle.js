@@ -22,9 +22,7 @@ export default class Battle extends LightningElement {
         );
     }
     handleSelection(message) {
-        console.log(message.battlee);
         this.character = message.battlee;
-        console.log(this.character);
         this.charHealth = this.character.Max_Hp__c;
     }
     connectedCallback() {
